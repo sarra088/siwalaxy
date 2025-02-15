@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Siwalaxy</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: poppins;
+    }
+    :root{
+      --animation-timing: cubic-bezier(0.6, 0.7, 0.4, 2);
+    }
+ /* Image Section Animations */
+.right img {
+  animation: float 4s var(--animation-timing) infinite alternate;
+  filter: drop-shadow(0 24px 40px rgba(0,0,0,0.4));
+}
+
+@keyframes float {
+  0% { transform: translateY(-20px) rotate(-2deg); }
+  100% { transform: translateY(20px) rotate(2deg); }
+}
+
+.gradient {
+  animation: pulseGlow 6s var(--animation-timing) infinite alternate;
+}
+
+@keyframes pulseGlow {
+  0% {
+    transform: scale(0.9);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+}
+
+    html,
+    body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .dropdown-button {
+      background-color: #4caf50;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #a8a2c9;
+      box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+      min-width: 160px;
+      border-radius: 5px;
+      z-index: 1;
+    }
+
+    .dropdown-content a {
+      color: black;
+      padding: 10px 15px;
+      text-decoration: none;
+      display: block;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #b13ea0;
+      text-decoration: none;
+      color: #ffffff;
+    }
+
+    .parent {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: #020a1f;
+      box-shadow: 5px 5px 20px black;
+      color: #ffffff;
+      overflow: hidden;
+    }
+
+    .parent nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 50px;
+      height: 15%;
+    }
+
+    nav h1 {
+      font-size: 35px;
+      font-weight: 600;
+      margin: 0;
+      color: #814d83;
+      position: relative;
+    }
+
+    nav h1::before {
+      content: "";
+      width: 20px;
+      height: 20px;
+      position: absolute;
+      top: 50%;
+      left: -40px;
+      transform: translateY(-50%);
+    }
+
+    nav ul {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
+
+    nav ul li {
+      list-style-type: none;
+    }
+
+    ul li a {
+      text-decoration: none;
+      padding: 10px 20px;
+      text-transform: uppercase;
+      font-weight: 500;
+      font-size: 14px;
+      color: white;
+      transition: 0.5s ease;
+    }
+
+    ul li a:hover {
+      text-decoration: none;
+      color: rgb(110, 194, 234);
+    }
+
+    ul li #sub {
+      text-decoration: none;
+      color: white;
+      background-image: linear-gradient(90deg, #c04848, #480048, #c04848);
+      padding: 10px 30px;
+      text-align: center;
+      transition: 0.5s;
+      background-size: 200% auto;
+      border-radius: 20px;
+    }
+
+    ul li #sub:hover {
+      background-position: right center;
+    }
+
+    .parent .main_content {
+      display: flex;
+      height: 85%;
+    }
+
+    .main_content .left {
+      width: 50%;
+      height: 100%;
+      padding: 80px 100px;
+    }
+
+    .left h1 {
+      font-size: 55px;
+      font-weight: 600;
+      margin-top: 20px;
+      margin-bottom: 20px;
+      line-height: 60px;
+      text-transform: uppercase;
+    }
+
+    .left h1 span {
+      color: #5e0461;
+    }
+
+    .left p {
+      font-size: 20px;
+      font-weight: 400;
+      margin-top: 10px;
+    }
+
+    .left button {
+      padding: 7px 15px;
+      border-radius: 5px;
+      font-size: 12px;
+      border: none;
+      outline: none;
+      letter-spacing: 1px;
+      margin-top: 40px;
+      background-color: #033677;
+      color: white;
+      cursor: pointer;
+      transition: 0.5s ease;
+    }
+
+    .left button:hover {
+      background-color: rgb(42, 0, 93);
+      box-shadow: 0 0 10px white;
+    }
+
+    .main_content .right {
+      width: 60%;
+      height: 100%;
+      padding-left: 200px;
+      overflow: hidden;
+    }
+
+    .right img {
+      width: 380px;
+      transform: translateY(-30px);
+      filter: saturate(120%);
+    }
+
+    .gradient {
+      width: 350px;
+      height: 350px;
+      position: absolute;
+      top: 48%;
+      left: 56%;
+      border-radius: 50%;
+      background-color: #f2acf2;
+      z-index: -1;
+      filter: blur(50px);
+      box-shadow: 0 0 250px rgb(57, 57, 186), 0 0 200px rgb(97, 79, 162),
+        0 0 150px rgb(159, 149, 237);
+    }
+  </style>
+  <body>
+    <div class="parent">
+      <div class="gradient"></div>
+      <nav>
+        <h1>Siwalaxy</h1>
+        <ul>
+          <li><a href="aboutus.html">About us</a></li>
+          <li><a href="help.html">Help</a></li>
+          <li>
+            <div class="dropdown">
+              <button
+                id="sub"
+                class="dropdown-button"
+                onclick="toggleDropdown()"
+              >
+                Get Started
+              </button>
+              <div class="dropdown-content" id="dropdownMenu">
+                <a href="login_entreprise.php">Company</a>
+                <a href="login_employe.php">Employee</a>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </nav>
+      <div class="main_content">
+        <div class="left">
+          <h1>Welcome to <span>Siwalaxy</span></h1>
+          <p>
+            Embark on a journey through the galaxy of your enterprise! Siwalaxy
+            simplifies HR management, helping you navigate the stars of work
+            with ease.
+          </p>
+          <a href="aboutus.html"><button>READ MORE</button></a>
+        </div>
+        <div class="right">
+          <img src="bg.png" alt="Galaxy Illustration" />
+        </div>
+      </div>
+    </div>
+    <script>
+      function toggleDropdown() {
+        const dropdown = document.getElementById("dropdownMenu");
+        dropdown.style.display =
+          dropdown.style.display === "block" ? "none" : "block";
+      }
+
+      // Close the dropdown if clicked outside
+      window.onclick = function (event) {
+        if (!event.target.matches(".dropdown-button")) {
+          const dropdowns = document.getElementsByClassName("dropdown-content");
+          for (let i = 0; i < dropdowns.length; i++) {
+            dropdowns[i].style.display = "none";
+          }
+        }
+      };
+    </script>
+  </body>
+</html>

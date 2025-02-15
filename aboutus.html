@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Siwalaxy</title>
+
+    <style>
+      /* =========== Google Fonts ============ */
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+      /* =============== Globals ============== */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+      }
+
+      body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-height: 100vh;
+        background: linear-gradient(135deg, #0F172A, #0F172A);
+        color: #fff;
+      }
+
+      /* =============== Header ================ */
+      header {
+        width: 100%;
+        padding: 20px;
+        background: #1E293B;
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid #3b2a79;
+        text-align: center;
+      }
+
+      header h1 {
+        font-size: 2.5rem;
+        font-weight: 600;
+        color: #fff;
+        animation: fadeIn 1.5s ease-in-out;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(-20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* =============== Card Container ================ */
+      .card-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px;
+        padding: 20px;
+        width: 90%;
+        max-width: 1200px;
+        margin: 40px 0;
+      }
+
+      /* =============== Card Styles ================ */
+      .card {
+        background: #1E293B;
+        border-radius: 15px;
+        backdrop-filter: blur(10px);
+        border: 1px solid #3b2a79;
+        overflow: hidden;
+        position: relative;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+      }
+
+      .card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          45deg,
+          rgba(255, 255, 255, 0.1),
+          rgba(255, 255, 255, 0.05)
+        );
+        z-index: -1;
+        transition: opacity 0.3s ease;
+        opacity: 0;
+      }
+
+      .card:hover::before {
+        opacity: 1;
+      }
+
+      .card-content {
+        padding: 20px;
+        text-align: center;
+      }
+
+      .card-content h2 {
+        font-size: 24px;
+        margin-bottom: 10px;
+        color: #fff;
+      }
+
+      .card-content p {
+        font-size: 16px;
+        color: #ddd;
+        margin-bottom: 20px;
+      }
+
+      /* =============== Animation Keyframes ================ */
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-10px);
+        }
+      }
+
+      .card:hover {
+        animation: float 2s ease-in-out infinite;
+      }
+
+      /* =============== Footer ================ */
+      footer {
+        width: 100%;
+        padding: 20px;
+        background: #1E293B;
+        backdrop-filter: blur(10px);
+        border-top: 1px solid #3b2a79;
+        text-align: center;
+        margin-top: auto;
+      }
+
+      footer p {
+        font-size: 1rem;
+        color: #fff;
+        margin: 0;
+      }
+
+      footer a {
+        color: #fff;
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.3s ease;
+      }
+
+      footer a:hover {
+        color: #F59E0B;
+      }
+
+      .btn {
+        display: inline-block;
+        padding: 10px 20px;
+        background: #5e0461;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        border-radius: 25px;
+        color: #fff;
+        text-decoration: none;
+        font-weight: 500;
+        transition: background 0.3s ease, transform 0.3s ease;
+      }
+
+      .btn:hover {
+        background: #FF5252;
+        transform: scale(1.05);
+        transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <h1>About Us</h1>
+    </header>
+
+    <!-- Card Container -->
+    <div class="card-container">
+      <!-- Card 1 -->
+      <div class="card">
+        <div class="card-content">
+          <h2>Our Mission</h2>
+          <p>
+            Siwalaxy is an innovative application dedicated to human resource
+            management. We aim to simplify the complex processes of employee
+            management, absences, and documents, while providing a user-friendly
+            interface accessible to all.
+          </p>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="card">
+        <div class="card-content">
+          <h2>Our Story</h2>
+          <p>
+            Founded in 2025, Siwalaxy was developed to meet the growing needs of
+            companies looking to automate and centralize their human resource
+            management. By combining technology and simplicity, our application
+            facilitates administrative tasks, allowing companies to focus on
+            what really matters: their employees.
+          </p>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="card">
+        <div class="card-content">
+          <h2>Our Values</h2>
+          <p>
+            At Siwalaxy, we believe in innovation, efficiency, and
+            accessibility. We are committed to providing modern and secure
+            solutions for businesses of all sizes, while maintaining a
+            user-centered approach.
+          </p>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="card">
+        <div class="card-content">
+          <h2>Our Impact</h2>
+          <p>
+            At Siwalaxy, we aspire to transform human resource management by
+            offering an intuitive and efficient solution. Our goal is to help
+            companies automate and centralize the management of employees,
+            absences, and documents, thereby reducing administrative burdens and
+            improving overall efficiency. By emphasizing innovation and
+            accessibility, we aim to make daily operations easier for businesses
+            and allow them to focus on what truly matters: their employees.
+          </p>
+        </div>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="card">
+        <div class="card-content">
+          <h2>Why Choose Siwalaxy?</h2>
+          <p>
+            Whether you are a small business or a large organization, Siwalaxy
+            is here to support you in managing your human resources. We invite
+            you to discover our application and join our community of innovative
+            companies.
+          </p>
+        </div>
+      </div>
+
+      <!-- Card 6 -->
+      <div class="card">
+        <div class="card-content">
+          <h2>Our Team</h2>
+          <a href="us.html" class="btn">Learn More</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <p>
+        &copy; 2025 Siwalaxy. All rights reserved. |
+        <a href="termes.html">Terms and Conditions</a>
+      </p>
+    </footer>
+  </body>
+</html>

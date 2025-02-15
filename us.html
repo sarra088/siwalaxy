@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Siwalaxy - Notre Équipe</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #0F172A;
+            overflow: hidden;
+        }
+
+        /* Header */
+        header {
+            width: 100%;
+            padding: 15px 0;
+            text-align: center;
+            background: #7C3AED;
+            color: #dbdbdb;
+            font-size: 2rem;
+            position: fixed;
+            top: 0;
+            z-index: 10;
+        }
+
+        /* Sections Container */
+        .section-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            width: 100vw;
+            padding-top: 80px; /* Adjust for fixed header */
+        }
+
+        .section {
+            position: relative;
+            width: 22vw;
+            height: 70vh;
+            margin: 10px;
+            overflow: hidden;
+            border-radius: 15px;
+            transition: transform 0.5s ease, filter 0.5s ease;
+            filter: grayscale(100%) blur(3px);
+            opacity: 0;
+            animation: fadeIn 1s forwards;
+        }
+
+        /* Staggered Entrance Animation */
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(30px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        .section img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .section:hover {
+            transform: scale(1.1);
+            filter: grayscale(0%) blur(0px);
+            z-index: 2;
+        }
+
+        .section:hover img {
+            transform: scale(1.2);
+        }
+
+        .section::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            transition: background 0.5s;
+        }
+
+        .section:hover::before {
+            background: rgba(0, 0, 0, 0.3);
+        }
+
+        .text-container {
+            position: absolute;
+            bottom: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            color: #ffffff;
+            transition: transform 0.5s, opacity 0.5s;
+            opacity: 0;
+        }
+
+        .section:hover .text-container {
+            transform: translateY(-10px);
+            opacity: 1;
+        }
+
+        .text-container h2 {
+            font-size: 1.8rem;
+            margin-bottom: 5px;
+        }
+
+        .text-container p {
+            font-size: 1.2rem;
+        }
+    </style>
+</head>
+<body>
+    <header>Notre Équipe</header>
+
+    <div class="section-container">
+        <div class="section" style="animation-delay: 0.2s; background-color: #ff36c3;">
+            <img src="sara.png" alt="Sarra Mlika">
+            <div class="text-container">
+                <h2>Sarra Mlika</h2>
+                <p>Frontend Developer</p>
+            </div>
+        </div>
+
+        <div class="section" style="animation-delay: 0.4s; background-color: #9b1a74;">
+            <img src="wij.png" alt="Wejdene Frijii">
+            <div class="text-container">
+                <h2>Wejdene Frijii</h2>
+                <p>Backend Developer</p>
+            </div>
+        </div>
+
+        <div class="section" style="animation-delay: 0.6s; background-color: #741357;">
+            <img src="im.png" alt="Azza Lotfi">
+            <div class="text-container">
+                <h2>Azza Lotfi</h2>
+                <p>Backend Developer</p>
+            </div>
+        </div>
+
+        <div class="section" style="animation-delay: 0.8s; background-color: #400a30;">
+            <img src="azza.png" alt="Imen Ben Mbarek">
+            <div class="text-container">
+                <h2>Imen Ben Mbarek</h2>
+                <p>Frontend Developer</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

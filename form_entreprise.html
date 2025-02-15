@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inscription Entreprise</title>
+    <script>
+      function genererDepartements() {
+        var nbDepartements =
+          document.getElementById("nombre_departement").value;
+        var container = document.getElementById("departements_container");
+        container.innerHTML = ""; // Vider l'ancien contenu
+
+        for (var i = 1; i <= nbDepartements; i++) {
+          var input = document.createElement("input");
+          input.type = "text";
+          input.name = "departement_" + i;
+          input.placeholder = "Nom du département " + i;
+          input.required = true;
+          container.appendChild(input);
+          container.appendChild(document.createElement("br"));
+        }
+      }
+
+      function validerMotDePasse() {
+        var mdp = document.getElementById("mot_de_passe").value;
+        var confirmMdp = document.getElementById(
+          "confirmer_mot_de_passe"
+        ).value;
+        var regex = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d).{8,}$/;
+
+        if (!regex.test(mdp)) {
+          alert(
+            "Le mot de passe doit contenir au moins 8 caractères, une majuscule, des lettres et des chiffres."
+          );
+          return false;
+        }
+
+        if (mdp !== confirmMdp) {
+          alert("Les mots de passe ne correspondent pas.");
+          return false;
+        }
+
+        return true;
+      }
+    </script>
+  </head>
+  <body>
+    <h2>Inscription Entreprise</h2>
+    <form
+      action="inscription_entreprise.php"
+      method="post"
+      onsubmit="return validerMotDePasse();"
+    >
+      <label>Nom de la société :</label>
+      <input type="text" name="nom_societe" required /><br />
+
+      <label>Email :</label>
+      <input type="email" name="email" required /><br />
+
+      <label>Adresse :</label>
+      <textarea name="adresse" required></textarea><br />
+
+      <label>Pays :</label>
+      <input type="text" name="pays" required /><br />
+
+      <label>Ville :</label>
+      <input type="text" name="ville" required /><br />
+
+      <label>Code postal :</label>
+      <input type="text" name="code_postal" required maxlength="4" /><br />
+
+      <label>Date de fondation :</label>
+      <input type="date" name="date_fondation" /><br />
+
+      <label>Fax :</label>
+      <input type="tel" name="fax" /><br />
+
+      <label>Téléphone :</label>
+      <input type="tel" name="telephone" required /><br />
+
+      <label>Nombre de départements :</label>
+      <input
+        type="number"
+        id="nombre_departement"
+        name="nombre_departement"
+        min="1"
+        required
+        oninput="genererDepartements();"
+      /><br />
+
+      <div id="departements_container"></div>
+
+      <label>Nombre d'employés :</label>
+      <input type="number" name="nb_employes" required /><br />
+
+      <label>Mot de passe :</label>
+      <input
+        type="password"
+        id="mot_de_passe"
+        name="mot_de_passe"
+        required
+      /><br />
+
+      <label>Confirmer le mot de passe :</label>
+      <input
+        type="password"
+        id="confirmer_mot_de_passe"
+        name="confirmer_mot_de_passe"
+        required
+      /><br />
+      <label for="logo">Logo de la société :</label><br />
+      <input
+        type="file"
+        id="logo"
+        name="logo"
+        accept="image/*"
+        required
+      /><br />
+
+      <input type="checkbox" id="captcha" name="captcha" required />
+      <label for="captcha">Je ne suis pas un robot</label><br />
+
+      <input type="checkbox" id="accept_terms" required />
+      <label
+        >J'accepte les
+        <a href="termes_conditions.php" target="_blank"
+          >termes et conditions</a
+        ></label
+      ><br />
+
+      <button type="submit">S'inscrire</button>
+    </form>
+  </body>
+</html>

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Siwalaxy</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+      }
+
+      body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-height: 100vh;
+        background: #0F172A;
+        color: #fff;
+      }
+
+      /* =============== Header ================ */
+      header {
+        width: 100%;
+        padding: 20px;
+        background: #1E293B;
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid #3b2a79;
+        text-align: center;
+      }
+
+      header h1 {
+        font-size: 2.5rem;
+        font-weight: 600;
+        color: #fff;
+        animation: fadeIn 1.5s ease-in-out;
+      }
+      li {
+        font-size: 1rem;
+        color: #fff;
+        margin-bottom: 20px;
+      }
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(-20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* Main Content */
+      .content {
+        max-width: 900px;
+        margin: 50px auto;
+        padding: 20px;
+        background-color: #1E293B; /* White background for content */
+        border-radius: 10px;
+        box-shadow: 0 4px 8px #3b2a79;
+      }
+
+      .content h2 {
+        text-align: center;
+        font-size: 2rem;
+        color: #7C3AED;
+      }
+
+      .faq {
+        margin-top: 20px;
+      }
+
+      .faq h3 {
+        font-size: 1.5rem;
+        color: #7C3AED;
+        margin-bottom: 10px;
+      }
+
+      .faq p {
+        font-size: 1rem;
+        color: #555;
+        margin-bottom: 20px;
+      }
+
+      .faq a {
+        color: #007bff;
+        text-decoration: none;
+      }
+
+      .faq a:hover {
+        text-decoration: underline;
+      }
+
+      /* Steps for Question 6 */
+      .steps {
+        margin-top: 10px;
+        padding: 10px;
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 8px;
+      }
+
+      .steps ol {
+        padding-left: 20px;
+        color: #ddd;
+      }
+
+      /* Footer */
+      footer {
+        width: 100%;
+        padding: 20px;
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+        text-align: center;
+        margin-top: auto;
+      }
+
+      footer p {
+        font-size: 1rem;
+        color: #fff;
+        margin: 0;
+      }
+
+      footer a {
+        color: #fff;
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.3s ease;
+      }
+
+      footer a:hover {
+        color: #6a11cb;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Help Page - Siwalaxy</h1>
+    </header>
+
+    <!-- Main Content -->
+    <div class="content">
+      <h2>How can we assist you?</h2>
+      <div class="faq">
+        <h3>1. How do I reset my password?</h3>
+        <p>
+          Click on "Forgot Password" on the login page and follow the
+          instructions sent via email.
+        </p>
+
+        <h3>2. How do I update my personal information?</h3>
+        <p>Go to your profile from the main dashboard of the application.</p>
+
+        <h3>3. How can I contact the Siwalaxy team?</h3>
+        <p>
+          You can reach us at:
+          <a href="mailto:siwalaxy@gmail.com">siwalaxy@gmail.com</a>.
+        </p>
+
+        <h3>4. How do I change my profile picture?</h3>
+        <p>Go to your account settings and select "Change Profile Picture."</p>
+
+        <h3>5. What should I do if I encounter a technical issue?</h3>
+        <p>
+          If you experience a technical problem, contact our team at
+          <a href="mailto:siwalaxy@gmail.com">siwalaxy@gmail.com</a> or visit
+          our help center.
+        </p>
+
+        <h3>6. How do I install the application on my phone?</h3>
+        <p>
+          Siwalaxy is a web application and can be installed on your phone like
+          a regular app using Progressive Web App (PWA) technology.
+        </p>
+        <div class="steps">
+          <p>Follow these steps to install Siwalaxy on your phone:</p>
+          <ol>
+            <li>
+              <strong>On Android (Google Chrome):</strong><br /><br />
+              <ol>
+                <li>Open the application in Google Chrome.</li>
+                <li>Tap the three-dot menu in the top right corner.</li>
+                <li>Select "Add to Home screen" and confirm.</li>
+              </ol>
+            </li>
+            <li>
+              <strong>On iPhone (Safari):</strong><br /><br />
+              <ol>
+                <li>Open the application in Safari.</li>
+                <li>Tap the Share button (icon at the bottom).</li>
+                <li>Select "Add to Home Screen" and confirm.</li>
+                <li>
+                  An icon will appear on your home screen, allowing you to use
+                  Siwalaxy like a mobile app.
+                </li>
+              </ol>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>&copy; 2025 Siwalaxy - Simplify your human resources.</footer>
+  </body>
+</html>
